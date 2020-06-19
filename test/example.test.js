@@ -3,14 +3,17 @@
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
+import {grams2Oz} from '../app.js';
+
+test('test grams2cups conversion 100g to 3.5oz', (expect) => {
     //Arrange
-    // Set up your arguments and expectations
-    const expected = true;
-    
+    // Set up your arguments and expectation
+    const grams =  100;
+    const expected = 3.5;
+
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = false;
+    const actual = grams2Oz(grams);
 
     //Expect
     // Make assertions about what is expected versus the actual result
