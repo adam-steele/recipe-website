@@ -9,22 +9,25 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Adam's Recipes</title>
 </head>
 
 <body>
 
     <header>
-        Adam's Recipe website
+        <h1>Adam's Recipe Website</h1>
     </header>
 
     <nav>
-        nav bar
 
+        <a href="#seeded-loaf-title">Seeded Loaf</a>
+        <a href="#tea-title">Cup of Tea</a>
+        <a href="#mac-and-cheese-title">Microwave 5-Minute Mac 'N' Cheese  </a>
 
     </nav>
-
-    <section class="recipe">
+    <p id="top"></p>
+    <section class="recipe" id="seeded-loaf">
 
         <h2 class="recipe-title"> 
             
@@ -104,7 +107,7 @@
         </aside>
 
         <details class="tips">
-           <summary>Tips &</summary> 
+           <summary>Tips & Tricks</summary> 
         
     
                 <ul class ="expand"> 
@@ -133,7 +136,7 @@
                     Place it on the baking parchment to prove for a further hour until doubled in size.
             </p>
             
-                    <p><strong>Step 7:</strong> Heat oven to 220C/fan 200C/gas 7.
+                    <p><strong>Step 7:</strong> Heat oven to <span class="temp">220C</span>/fan <span class="temp">200C</span>//gas 7.
             </p>
             
                     <p><strong>Step 8:</strong> Dust the loaf with some extra flour and cut a cross about 6cm long into the top of the loaf with a sharp knife.
@@ -145,20 +148,17 @@
 
         <details class="source">
             <summary>Source</summary> 
-            <p><em>Source: <a href="https://www.bbcgoodfood.com/recipes/easy-white-bread"> adapted from for this recipe</a></em></p>
+            <p><em> <a href="https://www.bbcgoodfood.com/recipes/easy-white-bread"> adapted from for this recipe</a></em></p>
         </details>
         
     </section>
 
-    <button  id="test2-butt">
-        class test
-    </button>
-
     <footer>
-        footer
+        <a href="#top">back to top</a>
     </footer>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="module" src="app.js"></script>
+    
 </body>
 
 </html>
