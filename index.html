@@ -9,69 +9,156 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Adam's Recipes</title>
 </head>
 
 <body>
 
     <header>
-        Adam's Recipe website
+        <h1>Adam's Recipe Website</h1>
     </header>
 
     <nav>
-        nav bar
 
+        <a href="#seeded-loaf-title">Seeded Loaf</a>
+        <a href="#tea-title">Cup of Tea</a>
+        <a href="#mac-and-cheese-title">Microwave 5-Minute Mac 'N' Cheese  </a>
 
     </nav>
-
-    <section class="recipe">
+    <p id="top"></p>
+    <section class="recipe" id="seeded-loaf">
 
         <h2 class="recipe-title"> 
             
-            Title 
+            Seeded loaf
 
         </h2>
 
         <aside class="time-serves">
-            time
+            <ul>
+                <li>Time: 2hrs 50 mins </li>
+                <li>Servings: 1 loaf (10 slices) </li>
+            </ul>
         </aside>
 
-        <button class="measurements">
-            button 
+        <button class="measurements" id="test-butt">
+            Uk 2 Us
         </button>
 
+
         <figure class="food-photos">
-            photo
+            <img class = "food-photos" id = "seeded-loaf-pic" src = "Seeded-loaf.jpeg" alt="Seeded Loaf made using this recipe">
+            <figcaption> The loaf in it's glory made in tin</figcaption>
         </figure>
 
         <aside class="ingredients">
-            ingridients
+            <table class = "ingredients-table">
+                <thead>
+                    <tr>
+                        <th class = "table-headers">Ingredients</th>
+                        <th class = "table-headers">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                <tr>
+                    <td>Flour</td>
+                    <td><span class="grams" id="test-grams">500g</span>  <span id="result"></span>
+                    <ul>
+                            <li><span class="grams">250g</span> Strong Bread Flour</li>
+                            <li><span class="grams">250g</span> Wholemeal Flour</li>
+                        </ul>
+                    </td>
+                </tr>
+                
+                <tr>
+                <td>Salt</td>
+                <td><span class="tsp">2 tsp</span></td>
+                </tr>
+                
+                <tr>
+                <td>Fast acting yeast</td>
+                <td><span class="grams" >7g</span> Sachet </td>
+                </tr>
+                
+                <tr>
+                <td>Mixed seeds</td>
+                <td> <span class="tbsp">1 tbsp</span> each of, 
+                    <ul>
+                        <li>Seasame</li>
+                        <li>Poppy</li>
+                        <li>Sunflower</li>
+                    </ul>
+                </td>
+                </tr>
+                
+                <tr>
+                <td>Water </td>
+                <td><span class="ml">300ml</span></td>
+                </tr>
+                
+                <tr>
+                <td>Olive oil</td>
+                <td><span class="tbsp">3 tbsp</span></td>
+                </tr>
+                </tbody>
+            </table>
         </aside>
 
         <details class="tips">
-           <summary>tips</summary> 
-           some tips go here
+           <summary>Tips & Tricks</summary> 
+        
+    
+                <ul class ="expand"> 
+                    <li> Use this recipe in a bread maker just as easily! Just increase water to 350ml </li><br>
+                    <li>If baking without breadmaker, safer to add slightly less liquid intially and more later if needed</li><br>
+                    <li>Whilst the amount of flour needs to be <span class="grams">500g</span> in total.
+                        You can add more Wholemeal if preferred, for different flavour & texture</li><br>
+                    <li> Seeds can also be substitued by this is my recommendaition. A mix of sizes is best</li>
+                </ul>
         </details>
     
 
         <article class="recipe-steps">
-          recipe-steps
+            <p><strong>Step 1:</strong> Mix <span class="grams">500g</span> flour, <span class="tsp">2 tsp</span>salt and a <span class="grams">7g</span>  sachet of fast-action yeast in a large bowl. Add <span class="tbsp">1 tbsp</span> of each seed.
+            </p>
+                    <p><strong>Step 2:</strong> Make a well in the centre, then add <span class="tbsp">3 tbsp</span> olive oil and <span class="ml">300ml</span> water, and mix well. If the dough seems a little stiff, add another 1-2 tbsp water and mix well.
+            </p>
+                    <p><strong>Step 3:</strong> Tip onto a lightly floured work surface and knead for around 10 mins.
+            </p>
+                    <p><strong>Step 4:</strong> Once the dough is satin-smooth, place it in a lightly oiled bowl and cover with cling film. Leave to rise for 1 hour until doubled in size or place in the fridge overnight.
+            </p>
+                    
+                    <p><strong>Step 5:</strong> Line a baking tray with baking parchment. Gently mould the dough into a ball.
+            </p>
+                    <p><strong>Step 6:</strong> 
+                    Place it on the baking parchment to prove for a further hour until doubled in size.
+            </p>
+            
+                    <p><strong>Step 7:</strong> Heat oven to <span class="temp">220C</span>/fan <span class="temp">200C</span>//gas 7.
+            </p>
+            
+                    <p><strong>Step 8:</strong> Dust the loaf with some extra flour and cut a cross about 6cm long into the top of the loaf with a sharp knife.
+            </p>
+            
+                    <p><strong>Step 9:</strong> Bake for 25-30 mins until golden brown and the loaf sounds hollow when tapped underneath. Cool on a wire rack.
+            </p>
         </article>
 
         <details class="source">
             <summary>Source</summary> 
-            source link 
+            <p><em> <a href="https://www.bbcgoodfood.com/recipes/easy-white-bread"> adapted from for this recipe</a></em></p>
         </details>
         
     </section>
 
-
-
     <footer>
-        footer
+        <a href="#top">back to top</a>
     </footer>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="module" src="app.js"></script>
+    
 </body>
 
 </html>
