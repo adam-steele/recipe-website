@@ -159,7 +159,7 @@ button {
     "photo ingred ingred ingred"
     "photo steps steps steps"
     "source source source source";
-    margin: 20px;
+    margin: auto;
     padding: 10px;
     
 
@@ -170,18 +170,8 @@ button {
     top: 100px;
     grid-column: span 2;
     z-index: 10;
-    display: grid;
-    grid-template-rows: 60px 50px 50px 1fr 1fr 1fr 30px;
-    grid-template-columns: repeat (2,1fr);
-    grid-template-areas:
-    "title" "title"
-    "time" "convert"
-    "tips" "serv"
-    "ingred" "ingred"
-    "photo" "photo"
-    "steps" "steps"
-    "source" "source"
-    ;
+    display: flex;
+    flex-direction: column;
     margin: 20px;
     padding: 10px;
     
