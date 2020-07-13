@@ -4,7 +4,8 @@
 body {
 
     display: grid;
-    grid-template-rows: 50px 80px 1fr 40px;
+    grid-template-rows: 50px 50px 1fr 40px;
+
     font-family: 'Roboto Mono', monospace;
     
     /* Colors */
@@ -50,7 +51,7 @@ nav{
     z-index: 12;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: left;
 }
 
 .navScroll{
@@ -62,8 +63,8 @@ nav{
  a{
     
     padding: 5px;
-    margin: 10px;
     text-decoration :none;
+    margin:5px;
     
     
 }
@@ -136,28 +137,68 @@ button {
     box-shadow: 10px 10px 5px grey;
 }
 
+#test-butt:hover {
+    background-color: var(--deep-champagne);
+    color: var(--green-sheen);
+    transform: scale(1.1);
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+}
+
 .recipe {
     position: absolute;
     top: 100px;
     grid-column: span 2;
     z-index: 10;
     display: grid;
-    grid-template: 60px 50px 0.5fr 20px 1fr 30px / 1fr 3fr ;
+    grid-template-rows: 60px 50px 0.5fr 1fr 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "title  title title title"
+    "time convert tips serv" 
+    "photo ingred ingred ingred"
+    "photo steps steps steps"
+    "source source source source";
     margin: 20px;
+    padding: 10px;
+    
 
 }
+@media only screen and (max-width: 600px){
+.recipe {
+    position: absolute;
+    top: 100px;
+    grid-column: span 2;
+    z-index: 10;
+    display: grid;
+    grid-template-rows: 60px 50px 50px 1fr 1fr 1fr 30px;
+    grid-template-columns: repeat (2,1fr);
+    grid-template-areas:
+    "title" "title"
+    "time" "convert"
+    "tips" "serv"
+    "ingred" "ingred"
+    "photo" "photo"
+    "steps" "steps"
+    "source" "source"
+    ;
+    margin: 20px;
+    padding: 10px;
+    
 
+    }
+}
 
 .recipe-title {
 
     background-color:var(--green-sheen);
-    grid-column: span 2;
+    grid-column: span 4;
     margin: 10px 20px;
     padding: 10px;
     font-weight: 700;
     font-size: 1.2em;
     color: var(--deep-champagne);
-
+    grid-area: title;
 
     
 
@@ -165,26 +206,35 @@ button {
 
 .time-serves{
     color: var(--green-sheen);
-    grid-area: auto ;
-
+    grid-column: span 1;
+    grid-area: time;
 }
 
 .measurements {
     background-color: var(--green-sheen);
     border: 2px solid black;
+    grid-column: span 1;
+    grid-area: convert;
+}
 
+.servings-calc{
+    grid-area: serv;
 }
 
 .food-photos {
     color: var(--green-sheen);
-    grid-area: 3/1/6/2;
+    grid-area: 3/1/5/2;
     width: 100%;
-
+    grid-column: span 1;
+    grid-area: photo;
 }
 
 .ingredients {
 
     padding-bottom: 10px;
+    grid-area: 3/2/5/4 ;
+    justify-content: start;
+    grid-area: ingred;
 
 }
 
@@ -199,12 +249,19 @@ text-align: center;
 transition: 0.3s;
 border: 2px solid black;
 box-shadow: 10px 10px 5px grey;
+grid-area: 2/3/3/4 ;
+grid-area: tips;
 
 }
 
 .tips summary{
     border-bottom: 2px solid var(--deep-champagne);
 } 
+
+.tips:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
 
 .tips ul{
     text-align: left;
@@ -221,7 +278,7 @@ box-shadow: 10px 10px 5px grey;
     margin: 20px 10% ;
     font-size: 1em;
     padding: 5px;
-    
+    grid-area: steps;
 
 }
 
@@ -230,9 +287,73 @@ box-shadow: 10px 10px 5px grey;
 }
 
 .source {
+    background-color: blueviolet;
     background-color: var(--deep-champagne);
     color: var(--green-sheen);
     height: fit-content;
-    grid-column: span 2;
+    grid-area: 5/1/6/5;
+    margin-bottom: 50px ;
+    padding: 10px;
+    grid-area: source;
+}
+
+.source:hover{
+    border: 2px solid black;
+    color: var(--deep-champagne);
+    background-color: var(--green-sheen);
+}
+   
+
+
+.source a {
+    color: var(--deep-champagne);
+    text-decoration: underline;
+}
+
+.source a:hover {
+    color: var(--green-sheen);
+    text-decoration: underline;
+}
+
+.servings{
+    background-color: blueviolet;
+}
+
+
+#test{
+display: none;
+ margin:150px;
+}
+
+#me{
+    position: relative;
+    left:0%;
+    animation-name: move; 
+    animation-duration: 10s; 
+    animation-timing-function:cubic-bezier(0.43, 0.67, 0.6, 0.31);
+    animation-iteration-count:infinite;
+    background-color: blueviolet;
+    width: 50px;
+}
+
+@keyframes move{
+
+    0% {
+        left: 0%;
+    }
+
+    25% {
+        left: 10%;
+    }
+
+    50%{
+        left: 20%;
+    }
+    75% {
+        left: 10%;
+    }
+    100%{
+        left: 0%;
+    }
 
 }

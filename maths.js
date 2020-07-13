@@ -14,3 +14,22 @@ const gramsConvert = function () {
 
 
 uk2us.addEventListener ('click', gramsConvert);
+
+
+
+// ingredient object 
+
+const Ingredient = function (name,amount,unit) {
+    this.name = name;
+    this.amount = amount;
+    this.unit = unit;
+} 
+
+
+Ingredient.prototype.writeName = function () {
+    return this.amount + this.unit + this.name;
+}
+
+const flour = new Ingredient("Flour",500,"g");
+
+console.log(flour);
