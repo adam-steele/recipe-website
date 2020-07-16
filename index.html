@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" type="text/css" href="styles/glider.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     
  
@@ -28,7 +29,7 @@
         <a href="#seeded-loaf-title">Seeded Loaf</a>
         <a href="#tea-title">Cup of Tea</a>
         <a href="#mac-and-cheese-title">Microwave 5-Minute Mac 'N' Cheese  </a>
-        <img id="me" src="/recipe-website/assets/Adam.jpg" alt="photo-of-me">
+        <img id="me" src="/assets/Adam.jpg" alt="photo-of-me">
     </nav>
     <p id="top"></p>
     <section class="recipe" id="seeded-loaf">
@@ -40,13 +41,10 @@
         <aside class="time-serves">
            
                 <p>Time: 2hrs 50 mins </p><br>
-                <p>Servings: 1 loaf (10 slices) </p>
+                <p >Servings: <span class="serv-num">1</span> loaves (10 slices per loaf) </p>
             
         </aside>
 
-        <button class="measurements" id="test-butt">
-            Uk 2 Us
-        </button>
 
         <details class="tips">
             <summary>Tips & Tricks</summary> 
@@ -63,10 +61,28 @@
 
 
          <figure class="food-photos">
-            <img class = "food-photos" id = "seeded-loaf-pic" src = "/recipe-website/assets/Seeded-loaf.jpeg" alt="Seeded Loaf made using this recipe">
-            <figcaption> The loaf in it's glory made in tin</figcaption>
+            <section id="slides">
+                <div class="glider-contain">
+                    <div class="glider">
+                      <div class="pics"><img class="photos" src="assets/non-seeded-loaf.jpeg" alt=""></div>
+                      <div class="pics"><img class="photos" src="assets/seeded-loaf-bmaker.jpeg" alt=""></div>
+                      <div class="pics"><img class="photos" src="assets/seedy-tin.jpeg" alt=""></div>
+                    </div>
+                  
+                    <button id="prev" aria-label="Previous" class="glider-prev">«</button>
+                    <button id="next" aria-label="Next" class="glider-next">»</button>
+                    <div role="tablist" class="dots"></div>
+                  </div>
+               
+                </section>
+            
+            <!--<img class = "food-photos" id = "seeded-loaf-pic" src = "/assets/Seeded-loaf.jpeg" alt="Seeded Loaf made using this recipe">
+            <figcaption> The loaf in it's glory made in tin</figcaption>-->
         </figure> 
 
+        <button class="measurements" id="test-butt">
+            Uk 2 Us
+        </button>
 
         <aside class="ingredients">
             <table class = "ingredients-table">
@@ -124,7 +140,7 @@
 
         <aside class="servings-calc">
             <form id="servings">
-                <Label> <span id="serv-num">1</span> servings</Label><br>
+                <Label> <span class="serv-num">1</span> servings</Label><br>
                 <input type="range" class="serv-slide" id="points" name="points" min="1" max="10" value="1">
                 <button type="submit" class="sumbit-but">Sumbit</button>
 
@@ -165,34 +181,31 @@
             <summary>Source</summary> 
             <p><em> <a href="https://www.bbcgoodfood.com/recipes/easy-white-bread"> adapted from for this recipe</a></em></p>
         </details>
+
+        
         
     </section>
-    <section id="test">
-    <div class="glide">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide">0</li>
-            <li class="glide__slide">1</li>
-            <li class="glide__slide">2</li>
-          </ul>
 
-          <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
+    
+     <footer>
         <a href="#top">back to top</a>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.js"> </script> 
-  <script>
-    new Glide('.glide').mount()
-  </script> 
+    <script type="module" src="/js/app.js"></script>
+    <script src="/js/glider.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="module" src="app.js"></script>
+    <script>
+        window.addEventListener('load', function(){
+            new Glider(document.querySelector('.glider'), {
+                slidesToShow: 1,
+        dots: '.dots',
+        draggable: true,
+        arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+        }
+            })
+          })
+          </script>
     
     
 </body>

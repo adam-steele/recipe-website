@@ -103,12 +103,10 @@ function scrollFunction() {
 
 window.onscroll = function() {scrollFunction()};
 
-new Glide('.glide').mount()
-
 
 //check value of range 
 const $range = $('#points');
-const $servNum = $('#serv-num');
+const $servNum = $('.serv-num');
 const servVal = $($servNum).val;
 console.log(servVal);
 const $ingred = $('.ingred');
@@ -119,7 +117,11 @@ const ingred = document.getElementsByClassName('ingred');
 //update value on range change 
 
 const $rangeVal =  $range.on( "input", function() {
-    $servNum.html( $(this).val() );
+   for (let index = 0; index < $servNum.length; index++) {
+       const element = $servNum[index];
+       $servNum.html( $(this).val() );
+   }
+    
 });
 
 $servCalc.on("submit", function(event){
