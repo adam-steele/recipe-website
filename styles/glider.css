@@ -16,7 +16,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: flex !important;
   z-index: 1;
 }
 .glider.draggable {

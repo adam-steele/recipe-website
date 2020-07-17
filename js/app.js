@@ -126,74 +126,12 @@ const $rangeVal =  $range.on( "input", function() {
 
 $servCalc.on("submit", function(event){
     event.preventDefault();
-    breadFlour.servings();
-    water.servings();
-  
-
+    
 });
 
 
 
-// ingredient object 
 
-/*const Ingredient = function (num,name,amount,unit) {
-    this.name = name;
-    this.amount = amount;
-    this.unit = unit;
-    this.num = num;
-} 
-
-
-Ingredient.prototype.writeName = function () {
-    console.log(this.amount + this.unit + " " + this.name);
-
-}
-const newContent = function (Class) {
-    
-    for (let index = 0; index < Class.length; index++) {
-        const element = Class[index];
-        const text = (Class[index].textContent = this.amount + this.unit + " " + this.name)
-        console.log(text);
-    }
-    
-}
-
-Ingredient.prototype.servings = function () {
-    const range = document.getElementById('points');
-    const serv = this.amount * range.value
-
-    //if (serv> 1000 && this.unit === "g") {
-    //    this.amount = this.amount / 1000;
-     //   this.unit = "Kg"
-    //}
-
-   console.log(serv);
-   
-}
-
-Ingredient.prototype.convert = function(){
-
-    if (this.unit === "g") {
-        this.amount = this.amount * o2g;
-        this.newContent(ingred);
-    }
-
-   else if (this.unit === "ml") {
-        this.amount = this.amount * ml2c;
-        this.newContent(ingred)
-    }
-}
-
-
-const breadFlour = new Ingredient(0,"Flour",500,"g");
-const water = new Ingredient(1,"Water",300,"ml");
-
-
-
-breadFlour.servings();
-water.servings();
-
-*/
 
 
 
