@@ -126,7 +126,12 @@ const $rangeVal =  $range.on( "input", function() {
 
 $servCalc.on("submit", function(event){
     event.preventDefault();
+    for (let i = 0; i < ingred.length; i++){
+     const ingredNum =  parseFloat (ingred[i].textContent);
+     console.log(ingredNum);
+    const servnew = ingred[i].innerHTML = (ingredNum * 1) ;
     
+    }
 });
 
 

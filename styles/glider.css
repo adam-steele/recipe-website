@@ -34,8 +34,8 @@
 }
 .glider-slide {
   user-select: none;
-  justify-content: center;
-  align-content: center;
+  justify-content: center !important;
+  align-content: center !important;
   width: 100%;
 }
 .glider-slide img {
