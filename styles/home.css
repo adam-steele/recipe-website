@@ -139,8 +139,7 @@ p {
 #test-butt{
     border-radius: 5px;
     width: 30%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto ;
     font-family: inherit;
     color: var(--deep-champagne);
     box-shadow: 10px 10px 5px grey;
@@ -171,17 +170,25 @@ p {
 }
 @media only screen and (max-width: 600px){
 .recipe {
-    position: absolute;
-    top: 100px;
-    grid-column: span 2;
     z-index: 10;
-    display: flex;
-    flex-direction: column;
     margin: 20px;
     padding: 10px;
-    
-
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "title"
+    "time" 
+    "photo" 
+    "tips"
+    "convert"
+    "ingred" 
+    "serv"
+    "steps" 
+    "source";
     }
+.slider{
+    max-width: 80vw;
+}
+
 }
 
 .recipe-title {
@@ -206,7 +213,6 @@ p {
 .measurements {
     background-color: var(--green-sheen);
     border: 2px solid black;
-    grid-column: span 1;
     grid-area: convert;
     padding: 5px;
     margin: auto;
@@ -220,6 +226,7 @@ p {
     background-color: var(--deep-champagne);
     color: var(--green-sheen);
     margin: auto;
+    padding: 10px;
 }
 
 .food-photos {
@@ -241,12 +248,12 @@ color: var(--deep-champagne);
 height: fit-content;
 z-index: 100;
 padding: 5px;
-margin: auto;
+margin:  20px auto;
 text-align: center;
 transition: 0.3s;
 border: 2px solid black;
 box-shadow: 10px 10px 5px grey;
-grid-area: tips;
+grid-area: tips
 
 }
 
