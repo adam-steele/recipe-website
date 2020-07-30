@@ -112,8 +112,9 @@ console.log(servVal);
 const $ingred = $('.ingred');
 const $servCalc = $('#servings')
 const ingred = document.getElementsByClassName('ingred');
-const servButt = document.getElementById('serv-butt')
-
+const servButt = document.getElementById('serv-butt');
+const rangeValue = document.getElementById('points').value;
+console.log(rangeValue);
 //put this value in text label span 
 //update value on range change 
 
@@ -121,34 +122,15 @@ const $rangeVal =  $range.on( "input", function() {
    for (let index = 0; index < $servNum.length; index++) {
        const element = $servNum[index];
        $servNum.html( $(this).val() );
-   }
-    
+   };
+
+   for (let i = 0; i < ingred.length; i++){
+    const rangeV = this.value;   
+    const ingredNum = parseFloat(ingred[i].textContent);
+    let servRes = ingredNum * rangeV;
+
+    const newServ = (ingred[i].innerHTML = servRes + "g");
+
+    };
+
 });
-
-$servCalc.on("submit", function(event){
-    event.preventDefault();
-    /*for (let i = 0; i < ingred.length; i++){
-     const ingredNum =  parseFloat (ingred[i].textContent);
-     console.log(ingredNum);
-    const servnew = (ingredNum * Number($range.val)) ;
-    ingred.innerHTML = servnew;
-    console.log(servnew);
-    }*/
-});
-
-
-
-servButt.onclick = function(event){
-    event.preventDefault();
-    for (let i = 0; i < ingred.length; i++){
-     const ingredNum =  Number(ingred[i].textContent);
-     console.log(ingredNum);
-    const servnew = (ingredNum * Number($range.val)) ;
-    ingred.textContent = servnew;
-    console.log(servnew);
-    }
-};
-
-
-
-

@@ -132,6 +132,12 @@ th, td {
     padding-right:5px;
     }
 
+.table-headers{
+    text-decoration: underline;
+    font-weight: bolder ;
+    font-size: 1.3rem;
+}
+
 p {
     padding: 10px;
 }
@@ -399,7 +405,7 @@ display: none;
 
 .pic-caption{
     position: relative;
-    bottom: 10%;
+    bottom: 50px;
     background-color: var(--deep-champagne);
     opacity: 0.75;
     color: darkgreen;
