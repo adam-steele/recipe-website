@@ -1,0 +1,24 @@
+.recipe {
+    
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    grid-template-areas: 
+    "title  title title title"
+    "photo photo photo photo"
+    "time convert tips serv" 
+    "ingred ingred ingred ingred"
+    "steps steps steps steps"
+    "source source source source";
+    padding: 10px;
+    
+
+}
+
+.pics {
+    width: 300px;
+}
+
+#sard-outside {
+    width: 300px;
+}

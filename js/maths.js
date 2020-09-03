@@ -19,7 +19,27 @@ uk2us.addEventListener ('click', gramsConvert);
 
 // ingredient object 
 
-const Ingredient = function (name,amount,unit) {
+const SeededRecipe = {
+   
+ title: "Seeded Loaf",
+ time: "2 hrs 30 mins",
+ source: "https://www.bbcgoodfood.com/recipes/easy-white-bread",
+
+ ingredients = (name,amount,unit)=>{
+     this.name = name;
+     this.amount = amount;
+     this.unit = unit;
+ }
+     
+}
+
+ingredients.prototype.convert = function () {
+    
+    
+}
+
+
+/*const Ingredient = (name,amount,unit) => {
     this.name = name;
     this.amount = amount;
     this.unit = unit;
@@ -33,3 +53,9 @@ Ingredient.prototype.writeName = function () {
 const flour = new Ingredient("Flour",500,"g");
 
 console.log(flour);
+*/
+
+
+let rangeValue = document.getElementById("points").value;
+
+console.log(rangeValue);

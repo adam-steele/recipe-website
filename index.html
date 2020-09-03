@@ -26,9 +26,9 @@
 
     <nav>
 
-        <a href="#seeded-loaf-title">Seeded Loaf</a>
+        <a href="index.html">Seeded Loaf</a>
         <a href="breadmaker-version.html">breadmaker version</a>
-        <a href="#mac-and-cheese-title">Microwave 5-Minute Mac 'N' Cheese  </a>
+        <a href="sardines-on-toast.html">Sardines on toast </a>
         <img id="me" src="assets/Adam.jpg" alt="photo-of-me">
     </nav>
     <p id="top"></p>
@@ -94,28 +94,28 @@
                 <tbody>
                 
                 <tr>
-                    <td>Flour</td>
-                    <td><span class="grams ingred">500g</span>
+                    <td class="ingreds-name">Flour</td>
+                    <td><span class="ingreds-quant">500g</span>
                     <ul>
-                            <li><span class="grams ingred">250g</span> Strong Bread Flour</li>
-                            <li><span class="grams ingred">250g</span> Wholemeal Flour</li>
+                            <li><span class="ingreds-quant">250g</span> Strong Bread Flour</li>
+                            <li><span class="ingreds-quant">250g</span>  Wholemeal Flour</li>
                         </ul>
                     </td>
                 </tr>
                 
                 <tr>
-                <td>Salt</td>
-                <td><span class="tsp ingred">2tsp</span></td>
+                <td class="ingreds-name">Salt</td>
+                <td><span class="ingreds-quant">2tsp</span></td>
                 </tr>
                 
                 <tr>
-                <td>Fast acting yeast</td>
-                <td><span class="grams ingred" >7g</span> Sachet </td>
+                <td class="ingreds-name">Fast acting yeast</td>
+                <td><span class="ingreds-quant">7g</span> Sachet </td>
                 </tr>
                 
                 <tr>
-                <td>Mixed seeds</td>
-                <td> <span class="tbsp">1tbsp</span> each of, 
+                <td class="ingreds-name">Mixed seeds</td>
+                <td> <span class="ingreds-quant">1tbsp</span> each of, 
                     <ul>
                         <li>Seasame</li>
                         <li>Poppy</li>
@@ -125,13 +125,13 @@
                 </tr>
                 
                 <tr>
-                <td>Water </td>
-                <td><span class="ml">300ml</span></td>
+                <td class="ingreds-name">Water </td>
+                <td><span class="ingreds-quant">300ml</span></td>
                 </tr>
                 
                 <tr>
-                <td>Olive oil</td>
-                <td><span class="tbsp">3tsp</span></td>
+                <td class="ingreds-name">Olive oil</td>
+                <td><span class="ingreds-quant">3tsp</span></td>
                 </tr>
                 </tbody>
             </table>
@@ -139,13 +139,14 @@
 
         <aside class="servings-calc">
             <form id="servings">
-                <Label> <span class="serv-num">1</span> servings</Label><br>
-                <input type="range" class="slider" id="points" name="points" min="1" max="10" value="1"><br>
+                <Label> <span id="serv-num">1</span> servings</Label><br>
+                <input type="range" class="slider" id="points" name="points" min="1" max="10" value="1" defaultValue="1"><br>
                 <button id="serv-butt" type="submit" class="submit-but">Submit</button>
 
             </form>
 
         </aside>
+
 
         
     

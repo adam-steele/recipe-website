@@ -9,8 +9,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/glider.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     
@@ -32,16 +32,35 @@
         <img id="me" src="assets/Adam.jpg" alt="photo-of-me">
     </nav>
     <p id="top"></p>
-    <section class="recipe" id="seeded-loaf">
+    <section class="recipe" id="sardines-title">
 
         <h2 class="recipe-title"> 
-            Seeded loaf (breadmaker version)
+            Sardines on Toast!
         </h2>
+
+        <figure class="food-photos">
+            <section id="slides">
+                <div class="glider-contain">
+                    <div class="glider">
+                      <div class="pics"><img class="photos" src="assets/sard-pickles-outside.jpg" alt=""><p id="pic-cap-3" class="pic-caption">in oven in tin</p></div>
+                      <div class="pics"><img class="photos" src="assets/sard-basil-red-inside.jpg" alt=""><p id="pic-cap-1" class="pic-caption">in oven, no seeds, no tin</p></div>
+                      <div class="pics"><img class="photos" id="sard-outside" src="assets/sard-ugly-outside.jpg" alt=""><p id="pic-cap-2" class="pic-caption">in breadmaker</p></div>
+                      
+                    </div>
+                  
+                    <button id="prev" aria-label="Previous" class="glider-prev">«</button>
+                    <button id="next" aria-label="Next" class="glider-next">»</button>
+                    <div role="tablist" class="dots"></div>
+                  </div>
+               
+                </section>
+            
+        </figure> 
 
         <aside class="time-serves">
            
-                <p>Time: 4hr </p><br>
-                <p >Servings: <span class="serv-num">1</span> loaves (10 slices per loaf) </p>
+                <p>Time: 10 mins </p><br>
+                <p >Servings: <span class="serv-num">1</span> </p>
             
         </aside>
 
@@ -59,24 +78,7 @@
          </details>
 
 
-         <figure class="food-photos">
-            <section id="slides">
-                <div class="glider-contain">
-                    <div class="glider">
-                      <div class="pics"><img class="photos" src="assets/seedy-tin.jpeg" alt=""><p id="pic-cap-3" class="pic-caption">in oven in tin</p></div>
-                      <div class="pics"><img class="photos" src="assets/non-seeded-loaf.jpeg" alt=""><p id="pic-cap-1" class="pic-caption">in oven, no seeds, no tin</p></div>
-                      <div class="pics"><img class="photos" src="assets/seeded-loaf-bmaker.jpeg" alt=""><p id="pic-cap-2" class="pic-caption">in breadmaker</p></div>
-                      
-                    </div>
-                  
-                    <button id="prev" aria-label="Previous" class="glider-prev">«</button>
-                    <button id="next" aria-label="Next" class="glider-next">»</button>
-                    <div role="tablist" class="dots"></div>
-                  </div>
-               
-                </section>
-            
-        </figure> 
+        
 
         <button class="measurements" id="test-butt">
             Uk 2 Us
@@ -93,44 +95,33 @@
                 <tbody>
                 
                 <tr>
-                    <td>Flour</td>
-                    <td><span class="grams ingred">500g</span>
-                    <ul>
-                            <li><span class="grams ingred">300g</span> Strong Bread Flour</li>
-                            <li><span class="grams ingred">200g</span> Wholemeal Flour</li>
-                        </ul>
-                    </td>
+                    <td>Bread</td>
+                    <td><span class="grams ingred">1 slice</span></td>
                 </tr>
                 
                 <tr>
                 <td>Salt</td>
-                <td><span class="tsp ingred">1</span>tsp</td>
+                <td><span class="tsp ingred">1</span>pinch</td>
                 </tr>
                 
                 <tr>
-                <td>Fast acting yeast</td>
-                <td><span class="grams ingred" >7</span>g dried </td>
+                <td>Pepper</td>
+                <td><span class="grams ingred" >1</span>pinch </td>
                 </tr>
                 
                 <tr>
-                <td>Mixed seeds</td>
-                <td> <span class="tbsp">1</span>tbsp each of, 
-                    <ul>
-                        <li>Seasame</li>
-                        <li>Pumpkin</li>
-                        <li>Sunflower</li>
-                    </ul>
-                </td>
+                <td>Sardines</td>
+                <td> <span class="tbsp">1</span>tin,</td>
                 </tr>
                 
                 <tr>
-                <td>Water </td>
-                <td><span class="ml">350</span>ml</td>
+                <td>Cherry tomatoes </td>
+                <td><span class="ml">handful</span></td>
                 </tr>
                 
                 <tr>
                 <td>Olive oil</td>
-                <td><span class="tbsp">4</span>tbsp</td>
+                <td><span class="tbsp">to taste</span></td>
                 </tr>
                 </tbody>
             </table>
@@ -196,6 +187,7 @@
                 slidesToShow: 1,
         dots: '.dots',
         draggable: true,
+        exactWidth: true,
         arrows: {
             prev: '.glider-prev',
             next: '.glider-next'
