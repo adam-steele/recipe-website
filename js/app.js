@@ -157,7 +157,7 @@ Ingredients.prototype.convert = function() {
             break;
 
         case 'F':
-            this.amount = ((this.amount - 32) * 9/5).toFixed(0);
+            this.amount = ((this.amount - 32) / (9/5)).toFixed(0);
             this.unit = 'C';
             break;
 
@@ -241,6 +241,7 @@ const convertAll = function () {
 
 app.testButt.onclick = function() {
     convertAll();
+    console.log(tempFan.amount)
 };
 
 const writeRecipe = function(){
