@@ -54,7 +54,7 @@ const Ingredients = function(name, amount, unit){
 
 
     this.unitsAdjust = function() {
-        if (this.amount > 1000){
+        if (this.amount > 999){
             switch (this.unit){
                 case 'g':
                     this.amount = this.amount / 1000;
@@ -69,6 +69,23 @@ const Ingredients = function(name, amount, unit){
                 default:
                     break;
             }
+        }
+
+        else{ switch (this.unit){
+            case 'kg':
+                this.amount = this.amount * 1000;
+                this.unit = 'g';
+                break;
+
+            case 'l':
+                this.amount = this.amount * 1000;
+                this.unit = 'ml';
+                break;
+            
+            default:
+                break;
+        }
+
         }
     };
     
@@ -165,7 +182,7 @@ Ingredients.prototype.convert = function() {
             break;
             
     }
-
+    this.unitsAdjust();
     writeRecipe();
     
 
@@ -177,6 +194,7 @@ Ingredients.prototype.servReset = function() {
     } else {
         this.amount = (this.amount / app.rangeValue).toFixed(2);
     }
+    this.unitsAdjust();
 };
 
 Ingredients.prototype.servings = function() {
@@ -185,6 +203,8 @@ Ingredients.prototype.servings = function() {
     } else {
         this.amount = (this.amount * app.rangeValue).toFixed(2);
     }
+
+    this.unitsAdjust();
 };
 
 app.range.onchange = function() {
