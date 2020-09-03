@@ -26,7 +26,7 @@ const app = {
     testButt: document.getElementById('test-butt'),
     range: document.getElementById('points'),
     servNum: document.getElementById('serv-num'),
-    testClass: document.getElementsByClassName('ingreds-full'),
+    recipeIngreds: document.getElementsByClassName('ingreds-full'),
     servForm: document.getElementById('servings'),
     ingredsNameClass: document.getElementsByClassName('ingreds-name'),
     ingredsQuant: document.getElementsByClassName('ingreds-quant'),
@@ -151,6 +151,16 @@ Ingredients.prototype.convert = function() {
             this.unit = 'ml';
             break;
 
+        case 'C':
+            this.amount = ((this.amount * 9/5) + 32).toFixed(0);
+            this.unit = 'F';
+            break;
+
+        case 'F':
+            this.amount = ((this.amount - 32) * 9/5).toFixed(0);
+            this.unit = 'C';
+            break;
+
         default:
             break;
             
@@ -162,7 +172,7 @@ Ingredients.prototype.convert = function() {
 };
 
 Ingredients.prototype.servReset = function() {
-    if ((this.unit === 'g' || this.unit === 'ml')) {
+    if ((this.unit === 'g' || this.unit === 'ml'|| this.unit === 'tbsp' || this.unit === 'tsp')) {
         this.amount = (this.amount / app.rangeValue).toFixed(0);
     } else {
         this.amount = (this.amount / app.rangeValue).toFixed(2);
@@ -181,13 +191,13 @@ app.range.onchange = function() {
     app.rangeValue = this.value;
     app.servNum.innerHTML = app.rangeValue;
     
-    SeededRecipe.ingredsAll.forEach(element => {
+    SeededRecipe.ingredsTable.forEach(element => {
         element.servings();
         
     });
     writeRecipe();
 
-    SeededRecipe.ingredsAll.forEach(element => {
+    SeededRecipe.ingredsTable.forEach(element => {
         element.servReset();
     });
 
@@ -200,9 +210,11 @@ let breadFlour = new Ingredients('strong bread flour', 250, 'g');
 let wholemealFlour = new Ingredients('wholemeal flour', 250, 'g');
 let salt = new Ingredients('salt', 2, 'tsp');
 let water = new Ingredients('water', 300, 'ml');
-let seeds = new Ingredients('seeds', 3, 'tbsp');
+let seeds = new Ingredients('seeds', 1, 'tbsp');
 let yeast = new Ingredients('yeast', 7, 'g');
 let oil = new Ingredients('olive oil', 3, 'tbsp');
+let tempFan = new Ingredients('fan/', 200, 'C');
+let temp = new Ingredients('normal/', 220, 'C');
 
 
 
@@ -212,25 +224,29 @@ const SeededRecipe = {
     title: 'Seeded Loaf',
     time: '2 hrs 30 mins',
     source: 'https://www.bbcgoodfood.com/recipes/easy-white-bread',
-    ingredsAll: [allFlour, breadFlour, wholemealFlour, salt, yeast, seeds, water, oil],
-    ingredsName: [allFlour, salt, yeast, seeds, water, oil]
+    
+    ingredsAll: [allFlour, breadFlour, wholemealFlour, salt, yeast, seeds, water, oil, temp, tempFan],
+    ingredsTable: [allFlour, breadFlour, wholemealFlour, salt, yeast, seeds, water, oil],
+    ingredsName: [allFlour, salt, yeast, seeds, water, oil],
+    ingredsRecipe: [allFlour, salt, yeast, seeds, water, oil, tempFan, temp]
 };
 
+const convertAll = function () {
+    SeededRecipe.ingredsAll.forEach(element => {
+        element.convert();
+    });
+}
 
 
 
 app.testButt.onclick = function() {
-    
-    SeededRecipe.ingredsAll.forEach(element => {
-        element.convert();
-    });
-    
+    convertAll();
 };
 
 const writeRecipe = function(){
-    write2Class();
+    write2Class(SeededRecipe.ingredsRecipe, app.recipeIngreds);
     writeName2Class(SeededRecipe.ingredsName, app.ingredsNameClass);
-    writeQuant2Class(SeededRecipe.ingredsAll, app.ingredsQuant);
+    writeQuant2Class(SeededRecipe.ingredsTable, app.ingredsQuant);
 };
 
 writeRecipe();
